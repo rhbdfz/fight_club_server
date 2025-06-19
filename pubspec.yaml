@@ -1,0 +1,46 @@
+name: fight_club_server
+description: Серверная часть игры "Бойцовский клуб" на Dart с WebSocket поддержкой
+
+publish_to: 'none'
+
+version: 1.0.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  # HTTP сервер
+  shelf: ^1.4.1
+  shelf_web_socket: ^1.0.4
+
+  # WebSocket
+  web_socket_channel: ^2.4.0
+
+  # Утилиты
+  uuid: ^4.1.0
+  args: ^2.4.2
+
+  # Логирование
+  logging: ^1.2.0
+  shelf_router: ^1.1.4
+
+dev_dependencies:
+  test: ^1.24.0
+  lints: ^3.0.0
+
+# Исполняемые файлы
+executables:
+  fight_club_server: main
+
+# Дополнительная информация о сервере
+metadata:
+  server_name: "Fight Club Server"
+  version: "1.0.0"
+  author: "Dart Server Developer"
+  description: "WebSocket сервер для игры Бойцовский клуб"
+  ports:
+    - 8080  # WebSocket и HTTP
+  endpoints:
+    - /ws      # WebSocket соединения
+    - /stats   # Статистика сервера
+    - /health  # Проверка здоровья сервера
